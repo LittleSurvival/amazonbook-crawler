@@ -76,7 +76,7 @@ def get_series_link(base_url, search_input):
 
         for anchor in anchor_tags:
             href = anchor.get('href', '')
-            if 'dbs_' in href:
+            if href.startswith('dbs_'):
                 full_link = urllib.parse.urljoin(base_url, href)
                 return full_link
         print("No series link found in the provided URL.")
