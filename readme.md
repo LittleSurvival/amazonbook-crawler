@@ -6,13 +6,34 @@ This project is a tool to extract information about books and series from websit
 
 1. **Install Python**
    
-   Make sure Python is installed on your system. You can download it from [https://www.python.org/downloads/](https://www.python.org/downloads/).
+   Make sure Python (version 3.10 or newer) is installed on your system. You can download it from [https://www.python.org/downloads/](https://www.python.org/downloads/). Always ensure you are using the latest version of Python for compatibility and performance improvements.
 
-2. **Run Setup Script**
+2. **Set Up Virtual Environment**
    
-   Double-click `setup.bat` to install all the necessary Python libraries and dependencies.
+   Create a virtual environment to manage project dependencies. Run the following commands in your terminal:
+   ```sh
+   python -m venv venv
+   ```
 
-3. **Configure the Base URL**
+3. **Activate Virtual Environment**
+   
+   - On Windows:
+     ```sh
+     venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```sh
+     source venv/bin/activate
+     ```
+
+4. **Install Dependencies**
+   
+   Double-click `setup.bat` or run the following command to install all the necessary Python libraries from `requirements.txt`:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+5. **Configure the Base URL**
    
    Update the `config.json` file with the base URL of the target site. For example:
    ```json
@@ -21,9 +42,9 @@ This project is a tool to extract information about books and series from websit
    }
    ```
 
-4. **Launch the Application**
+6. **Launch the Application**
    
-   Run `launch.bat` to start the application. This will open a GUI window:
+   Run `launch.bat` to start the application. Make sure your virtual environment is activated before launching. This will open a GUI window:
 
    ![GUI Window](img/gui.png)
 
@@ -34,7 +55,7 @@ This project is a tool to extract information about books and series from websit
 
   ![Running Application](img/running.png)
 
-5. **Extract and Save HTML Output**
+7. **Extract and Save HTML Output**
    
    After extraction, the data is saved in HTML format in the `/output` directory. The output format is displayed below:
 
@@ -45,5 +66,3 @@ This project is a tool to extract information about books and series from websit
 - Implement an auto-correction feature (using a language model or AI crawler) to prevent issues when the website source changes.
 - Add functionality to grab books that belong to a series but do not have a dedicated series page.
 - Enable extraction of R18 novels (this will require a Japanese IP and bypassing age verification).
-
-Feel free to contribute to the project or report any issues you encounter!
